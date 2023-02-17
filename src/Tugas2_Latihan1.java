@@ -1,6 +1,6 @@
 public class Tugas2_Latihan1 {
     public static void main(String[] args) {
-        Mahasiswa MHS = new Mahasiswa();
+        Mahasiswa_3 MHS = new Mahasiswa_3();
         System.out.println("IDENTITAS AWAL : ");
         MHS.cetak();
 
@@ -8,7 +8,7 @@ public class Tugas2_Latihan1 {
         System.out.println("IDENTITAS AKHIR : ");
         MHS.cetak();
 
-        Mahasiswa mhsPTI = new Mahasiswa();
+        Mahasiswa_3 mhsPTI = new Mahasiswa_3();
         System.out.println("IDENTITAS AWAL : ");
         MHS.cetak();
 
@@ -16,7 +16,7 @@ public class Tugas2_Latihan1 {
         System.out.println("IDENTITAS AKHIR : ");
         mhsPTI.cetak();
 
-        Mahasiswa mhsTI = new Mahasiswa();
+        Mahasiswa_3 mhsTI = new Mahasiswa_3();
         System.out.println("IDENTITAS AWAL : ");
         mhsTI.cetak();
 
@@ -24,7 +24,7 @@ public class Tugas2_Latihan1 {
         System.out.println("IDENTITAS AKHIR : ");
         mhsTI.cetak();
 
-        MHS = new Mahasiswa();
+        MHS = new Mahasiswa_3();
         System.out.println("IDENTITAS AWAL : ");
         MHS.cetak();
 
@@ -34,12 +34,12 @@ public class Tugas2_Latihan1 {
     }
 }
 
-class Mahasiswa {
+class Mahasiswa_3 {
     public String nama;
     public int angkatan;
     public String asal;
 
-    public Mahasiswa() {
+    public Mahasiswa_3() {
         nama = "Ani";
         angkatan = 2010;
         asal = "Magelang";

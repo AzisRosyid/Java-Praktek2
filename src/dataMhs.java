@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class dataMhs {
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    private static ArrayList<Mhs> mhs = new ArrayList<>();
+    private static ArrayList<Mahasiswa> data = new ArrayList<>();
 
     public static void main(String[] args) throws Exception {
         while(true) {
-            System.out.print("<===== Menu Pilihan =====>\n1. Input Data\n2. Pencarian Data\n3. Penghapusan Data\n4.Menampilkan Data\n5. Keluar Program\nInput Menu yang Anda pilih : ");
+            System.out.print("<===== Menu Pilihan =====>\n1. Input Data\n2. Pencarian Data\n3. Penghapusan Data\n4. Menampilkan Data\n5. Keluar Program\nInput Menu yang Anda pilih : ");
             int input = Integer.parseInt(br.readLine());
             switch(input) {
                 case 1:
@@ -29,30 +29,30 @@ public class dataMhs {
                     System.out.println("Input yang Anda masukkan tidak ada di dalam Menu!");
                     break;
             }
-            System.out.println("\n");
+            System.out.println();
         }
     }
 
     private static void inputData() throws Exception {
-        System.out.print("\n<=== Input Data ===>\nMasukkan jumlah data : ");
-        int data = Integer.parseInt(br.readLine());
-        for (int i = 0; i < data; i++) {
+        System.out.print("\n<=== Input Data ===>\nMasukkan jumlah data Mahasiswa : ");
+        int mhs = Integer.parseInt(br.readLine());
+        for (int i = 0; i < mhs; i++) {
             System.out.print("\nMasukkan Nama Mahasiswa : ");
             String nama = br.readLine();
-            System.out.println("Masukkan Alamat Mahasiswa : ");
+            System.out.print("Masukkan Alamat Mahasiswa : ");
             String alamat = br.readLine();
-            System.out.println("Masukkan IPK Mahasiswa : ");
+            System.out.print("Masukkan IPK Mahasiswa : ");
             double ipk = Double.parseDouble(br.readLine());
-            mhs.add(new Mhs(nama, alamat, ipk));
-            menampilkanData();
+            data.add(new Mahasiswa(nama, alamat, ipk));
+            tampilData(data);
         }
     }
 
     private static void pencarianData() throws Exception {
         System.out.print("\n<=== Pencarian Data ===>\nMasukkan Nama Mahasiswa : ");
         String cari = br.readLine();
-        for (int i = 0; i < mhs.size(); i++)
-            if (cari.equals(mhs.get(i).getNama())) {
+        for (int i = 0; i < data.size(); i++)
+            if (cari.equals(data.get(i).getNama())) {
                 System.out.println("-------------------------\nData Mahasiswa " + cari + " ditemukan!");
                 return;
             }
@@ -62,9 +62,9 @@ public class dataMhs {
     private static void penghapusanData() throws Exception {
         System.out.print("\n<=== Penghapusan Data ===>\nMasukkan Nama Mahasiswa  : ");
         String hapus = br.readLine();
-        for (int i = 0; i < mhs.size(); i++)
-            if (hapus.equals(mhs.get(i).getNama())) {
-                mhs.remove(hapus);
+        for (int i = 0; i < data.size(); i++)
+            if (hapus.equals(data.get(i).getNama())) {
+                data.remove(hapus);
                 System.out.println("-------------------------\nData Mahasiswa " + hapus + " ditemukan dan dihapus!");
                 return;
             }
@@ -73,25 +73,36 @@ public class dataMhs {
 
     private static void menampilkanData() {
         System.out.println("\n<=== Penampilan Data ===>");
-        for (int i = 0; i < mhs.size(); i++) {
+        for (int i = 0; i < data.size(); i++) {
             System.out.println("TAmpil");
         }
     }
 
-    private static void getSpc() {
-        int nama = 4, alamat = 5, ipk = 3;
-        int spc = nama + alamat + ipk + 2 * 6;
-    
-        
+    private static void tampilData(ArrayList<Mahasiswa> mhs) {
+        int nama = 6, alamat = 7, ipk = 5;
+        for (Mahasiswa i: mhs) {
+            if ((i.getNama().length() + 2) > nama) 
+                nama = i.getNama().length() + 2;
+            if ((i.getAlamat().length() + 2) > nama) 
+                alamat = i.getAlamat().length() + 2;
+            if ((i.getNama().length() + 2) > nama) 
+                ipk = String.valueOf(i.getIpk()).length() + 2;
+        }
+        int spc = nama + alamat + ipk + 2 * 7;
+        System.out.println("\n" + "-".repeat(spc));
+        System.out.printf("%" + -nama + "s||  %" + -alamat + "s||  %" + -ipk + "s", "Nama", "Alamat", "IPK");
+        System.out.print("\n" + "-".repeat(spc));
+        for (Mahasiswa i: mhs) 
+            System.out.printf("\n%" + -nama + "s||  %" + -alamat + "s||  %" + -ipk + "s", i.getNama(), i.getAlamat(), i.getIpk());
+        System.out.println("\n" + "-".repeat(spc));
     }
-
 }
 
-class Mhs {
+class Mahasiswa {
     private String nama, alamat;
     private double ipk;
 
-    public Mhs(String nama, String alamat, double ipk) {
+    public Mahasiswa (String nama, String alamat, double ipk) {
         this.nama = nama;
         this.alamat = alamat;
         this.ipk = ipk;
