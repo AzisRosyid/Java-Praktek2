@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class dataMhs {
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -53,10 +54,13 @@ public class dataMhs {
         String cari = br.readLine();
         for (int i = 0; i < data.size(); i++)
             if (cari.equals(data.get(i).getNama())) {
-                System.out.println("-------------------------\nData Mahasiswa " + cari + " ditemukan!");
+                ArrayList<Mahasiswa> mhs = new ArrayList<>();
+                mhs.add(data.get(i));
+                tampilData(mhs);
+                System.out.println("Data Mahasiswa " + cari + " ditemukan!");
                 return;
             }
-        System.out.println("Data Mahasiswa " + cari + " tidak ditemukan!");
+        System.out.println("-------------------------\nData Mahasiswa " + cari + " tidak ditemukan!");
     }
 
     private static void penghapusanData() throws Exception {
@@ -72,10 +76,8 @@ public class dataMhs {
     }
 
     private static void menampilkanData() {
-        System.out.println("\n<=== Penampilan Data ===>");
-        for (int i = 0; i < data.size(); i++) {
-            System.out.println("TAmpil");
-        }
+        System.out.print("\n<=== Penampilan Data ===>");
+        tampilData(data);
     }
 
     private static void tampilData(ArrayList<Mahasiswa> mhs) {
@@ -83,12 +85,12 @@ public class dataMhs {
         for (Mahasiswa i: mhs) {
             if ((i.getNama().length() + 2) > nama) 
                 nama = i.getNama().length() + 2;
-            if ((i.getAlamat().length() + 2) > nama) 
+            if ((i.getAlamat().length() + 2) > alamat) 
                 alamat = i.getAlamat().length() + 2;
-            if ((i.getNama().length() + 2) > nama) 
+            if ((i.getNama().length() + 2) > ipk) 
                 ipk = String.valueOf(i.getIpk()).length() + 2;
         }
-        int spc = nama + alamat + ipk + 2 * 7;
+        int spc = nama + alamat + ipk + 2 * 4;
         System.out.println("\n" + "-".repeat(spc));
         System.out.printf("%" + -nama + "s||  %" + -alamat + "s||  %" + -ipk + "s", "Nama", "Alamat", "IPK");
         System.out.print("\n" + "-".repeat(spc));
