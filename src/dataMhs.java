@@ -64,7 +64,7 @@ public class dataMhs {
         String hapus = br.readLine();
         for (int i = 0; i < data.size(); i++)
             if (hapus.equals(data.get(i).getNama())) {
-                data.remove(hapus);
+                data.remove(data.get(i));
                 System.out.println("-------------------------\nData Mahasiswa " + hapus + " ditemukan dan dihapus!");
                 return;
             }
