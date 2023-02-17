@@ -73,9 +73,7 @@ public class dataMhs {
 
     private static void menampilkanData() {
         System.out.println("\n<=== Penampilan Data ===>");
-        for (int i = 0; i < data.size(); i++) {
-            System.out.println("TAmpil");
-        }
+        tampilData(data);
     }
 
     private static void tampilData(ArrayList<Mahasiswa> mhs) {
