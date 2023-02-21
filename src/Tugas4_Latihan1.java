@@ -1,4 +1,4 @@
-public class Tugas4_Latihan {
+public class Tugas4_Latihan1 {
     public static void main(String[] args) {
         int tmp;
         boolean status;
@@ -34,6 +34,11 @@ public class Tugas4_Latihan {
         System.out.println("Jumlah uang yang disimpan : 2000");
         tmp = nasabah.getTabungan().getSaldo();
         System.out.println("Saldo sekarang = " + tmp);
+        System.out.println("\n\n");
+        PenyimpananUang tabungan = new PenyimpananUang(5000, 8.5 / 100);
+        System.out.println("Uang yang ditabung : 5000");
+        System.out.println("Tingkat bunga sekarang : 8.5%");
+        System.out.println("Total uang anda sekarang : " + tabungan.cekUang());
     }
 }
 
@@ -83,5 +88,18 @@ class Tabungan {
             return false;
         saldo -= jumlah;
         return true;
+    }
+}
+
+class PenyimpananUang extends Tabungan {
+    private double tingkatBunga;
+
+    public PenyimpananUang(int saldo, double tingkatBunga) {
+        super(saldo);
+        this.tingkatBunga = tingkatBunga;
+    }
+
+    public double cekUang() {
+        return this.getSaldo() + this.getSaldo() * tingkatBunga;
     }
 }
