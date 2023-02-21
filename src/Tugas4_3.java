@@ -1,6 +1,6 @@
 public class Tugas4_3 {
     public static void main(String[] args) {
-        System.out.println(new Silinder(10, 30).getVolume());
+        System.out.println(new Silinder(14, 50).getLuas());
     }
 }
 
@@ -102,7 +102,7 @@ class Silinder extends Lingkaran {
 
     @Override
     public double getLuas() {
-        return super.getDiameter() * (super.getR() + this.tinggi);
+        return super.getKeliling() * (super.getR() + this.tinggi);
     }
 
     @Override
