@@ -5,12 +5,15 @@ import java.util.Stack;
 public class latStack {
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     private static Stack<String> data = new Stack<>();
-    private static int spc = 2;
+    private static int spc;
 
     public static void main(String[] args) throws Exception {
         while (true) {
             System.out.print("<===== Menu Pilihan =====>\n1. Tambah Data\n2. Ambil Data\n3. Lihat Data Paling Atas\n4. Lihat Semua Isi Data Stack\n5. Buat Stack Baru <Clear Data>\n6. Keluar Program\nInput Menu yang Anda pilih : ");
-            int input = Integer.parseInt(br.readLine());
+            int input = 0;
+            try {
+                input = Integer.parseInt(br.readLine());
+            } catch (Exception e) {}
             switch(input) {
                 case 1:
                     tambahData();
@@ -28,7 +31,7 @@ public class latStack {
                     clearStack();
                     break;
                 case 6:
-                    System.out.println("TERMIA KASIH!");
+                    System.out.println("TERIMA KASIH!");
                     return;
                 default:
                     System.out.println("Input yang Anda masukkan tidak ada di dalam Menu!");
@@ -73,6 +76,7 @@ public class latStack {
     }
 
     private static void setSpc() {
+        spc = 2;
         for (String st : data) 
            if (st.length() + 1 > spc)
                 spc = st.length() + 1;
