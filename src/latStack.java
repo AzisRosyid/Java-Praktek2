@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Collections;
 import java.util.Stack;
 
 public class latStack {
@@ -91,4 +90,4 @@ public class latStack {
         } else 
             System.out.println("\nSTACK KOSONG!");
     }
-}
+} 
