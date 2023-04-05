@@ -1,6 +1,7 @@
 public class Tugas2_Latihan3 {
     public static void main(String[] args) {
-        
+        Scoope varx = new Scoope();
+        varx.infoScoope();
     }
 }
 

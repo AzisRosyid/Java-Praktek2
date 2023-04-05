@@ -23,7 +23,7 @@ class Report {
     public static void main(String[] args) {
         String name = "";
         int nilaiMatematika, nilaiFisika, nilaiKimia;
-        System.out.println("Masukkan nama : ");
+        System.out.print("Masukkan nama : ");
         name = bacaInputan();
         System.out.print("Masukkan nilai matematika : ");
         nilaiMatematika = Integer.parseInt(bacaInputan());

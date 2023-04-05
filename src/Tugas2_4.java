@@ -12,7 +12,7 @@ public class Tugas2_4 {
             if (opsi.equals("a")) {
                 System.out.print("Masukkan nama Mahasiswa : ");
                 String nama = br.readLine();
-                System.out.print("Masukkan angkatan mahasiswa : ");
+                System.out.print("Masukkan angkatan Mahasiswa : ");
                 int angkatan = Integer.parseInt(br.readLine());
                 System.out.print("Masukkan asal Mahasiswa : ");
                 String asal = br.readLine();

@@ -3,12 +3,12 @@ import java.io.InputStreamReader;
 
 public class Tugas2_Latihan5 {
     public static void main(String[] args) {
-        Persegi.main();
+        
     }
 }
 
 class Persegi {
-    public static void main() {
+    public static void main(String[] args) {
         BufferedReader data = new BufferedReader(new InputStreamReader(System.in));
         String x = " ";
         int hitungLuas = 0;
