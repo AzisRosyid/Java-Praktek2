@@ -96,14 +96,26 @@ public class dataMhs {
                 ipk = String.valueOf(i.getIpk()).length() + 2;
         }
         int spc = nama + alamat + ipk + 2 * 4;
-        System.out.println("\n" + "-".repeat(spc));
+        System.out.println();
+            for (int i = 0; i < spc; i++) {
+                System.out.print("-");
+            }
+        System.out.println();
         System.out.printf("%" + -nama + "s||  %" + -alamat + "s||  %" + -ipk + "s", "Nama", "Alamat", "IPK");
-        System.out.print("\n" + "-".repeat(spc));
+        System.out.println();
+            for (int i = 0; i < spc; i++) {
+                System.out.print("-");
+            }
+        System.out.println();
         for (Mahasiswa i: mhs) {
             if (i == null) break;
             System.out.printf("\n%" + -nama + "s||  %" + -alamat + "s||  %" + -ipk + "s", i.getNama(), i.getAlamat(), i.getIpk());
         }
-        System.out.println("\n" + "-".repeat(spc));
+        System.out.println();
+        for (int i = 0; i < spc; i++) {
+            System.out.print("-");
+        }
+        System.out.println();
     }
 }
 

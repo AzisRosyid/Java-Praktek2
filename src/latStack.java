@@ -90,7 +90,11 @@ public class latStack {
                 if (i == data.size()-1)
                     System.out.print(" ==> Data paling atas");
             }
-            System.out.println("\n"+"-".repeat(spc + 3));
+            System.out.println();
+            for (int i = 0; i < spc + 3; i++) {
+                System.out.print("-");
+            }
+            System.out.println();
         } else 
             System.out.println("\nSTACK KOSONG!");
     }

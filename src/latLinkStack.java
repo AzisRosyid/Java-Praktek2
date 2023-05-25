@@ -133,7 +133,11 @@ public class latLinkStack {
                     System.out.print(" ==> Data pertama");
                 current = current.next; 
             }
-            System.out.println("\n"+"-".repeat(spc + 3));
+            System.out.println();
+            for (int i = 0; i < spc + 3; i++) {
+                System.out.print("-");
+            }
+            System.out.println();
         }
     }
 
