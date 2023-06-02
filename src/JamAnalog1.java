@@ -81,13 +81,6 @@ public class JamAnalog1 extends Frame implements MouseListener
     }
 
     public void mouseClicked(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-        System.out.println("Mouse Clicked at (" + x + ", " + y + ")");
-        // String bip = "src/sound4.wav";
-        // playSound(bip);
-
-        // Prompt the user to set an alarm
         String input = javax.swing.JOptionPane.showInputDialog(this, "Set alarm (HH:mm):");
         if (input != null) {
             String[] timeComponents = input.split(":");
@@ -158,7 +151,6 @@ public class JamAnalog1 extends Frame implements MouseListener
 
         g2.setColor(Color.white);
         g2.setFont(new Font("Arial", Font.BOLD, 16));
-        // g2.drawString(String.valueOf("Click to set Alarm"), 15, 50);
         if (alarmHour != null && alarmMinute != null) 
             g2.setFont(new Font("Arial", Font.BOLD, 22));
         g2.drawString(alarmMinute == null && alarmHour == null ? "Click to set Alarm" : (alarmHour < 10 ? "0" + alarmHour : alarmHour) + ":" + (alarmMinute < 10 ? "0" + alarmMinute : alarmMinute), alarmMinute == null && alarmHour == null ? PusatX - 65 : PusatX - 30, PusatY + 65);
@@ -227,7 +219,6 @@ public class JamAnalog1 extends Frame implements MouseListener
         long delay = alarmTime.getTimeInMillis() - currentTime.getTimeInMillis();
 
         if (delay < 0) {
-            // If the alarm time has already passed for today, set it for tomorrow
             alarmTime.add(Calendar.DAY_OF_YEAR, 1);
             delay = alarmTime.getTimeInMillis() - currentTime.getTimeInMillis();
         }

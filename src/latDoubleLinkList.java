@@ -58,7 +58,7 @@ public class latDoubleLinkList {
         System.out.println("\n<=== Update Data ===>");
         System.out.print("Masukkan NIM : ");
         String nim = br.readLine();
-        if (!data.validNIM(nim)) {
+        if (data.validNIM(nim)) {
             System.out.println("NIM not found!");
             return;
         }
@@ -103,7 +103,7 @@ public class latDoubleLinkList {
         System.out.println("\n<=== Hapus Data ===>");
         System.out.print("Masukkan NIM : ");
         String nim = br.readLine();
-        if (!data.validNIM(nim)) {
+        if (data.validNIM(nim)) {
             System.out.println("NIM not found!");
             return;
         }
@@ -142,6 +142,7 @@ public class latDoubleLinkList {
         }
 
         public void insert(String nama, String nim, char jenisKelamin) {
+            sortByNIM();
             if (!validNIM(nim)) {
                 return;
             }
@@ -285,7 +286,6 @@ public class latDoubleLinkList {
 
         public Link hapus(String indexNIM) {
             Link indek = first;
-            System.out.println(indek.nim + ", " + indexNIM);
             while(!indek.nim.equals(indexNIM)) {
                 indek = indek.next;
                 if(indek == null)
@@ -323,10 +323,6 @@ public class latDoubleLinkList {
             current = first;
             while (current != null) {
                 System.out.printf("\n| %" + -spcNama + "s| %" + -spcNIM + "s| %" + -spcKelamin + "s|", current.nama, current.nim, current.jenisKelamin);
-                // if (current == first)
-                //     System.out.print(" ==> First");
-                // if (current == last)
-                //     System.out.print(" ==> Last");
                 current = current.next; 
             }
             System.out.print("\n" + "-".repeat(spc) + "\n\n");
